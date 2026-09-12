@@ -2,76 +2,747 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Xổ Số Miền Nam - Tra cứu XSMN, XSMB, XSMT</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Xổ Số Miền Nam | XSMN, XSMB, XSMT & Tra Cứu</title>
 
     <meta name="description"
-          content="Trang giới thiệu Xổ Số Miền Nam, hỗ trợ truy cập kết quả XSMN, XSMB, XSMT và các tiện ích tra cứu xổ số.">
+          content="Kênh giới thiệu Xổ Số Miền Nam với liên kết tra cứu XSMN, XSMB, XSMT, trực tiếp xổ số, dò vé, kết quả 30 ngày và tin tức xổ số.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical"
+          href="https://xosomienamcc.github.io/">
+
+    <link rel="icon"
+          href="https://github.com/xosomienamcc.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+
+    <meta property="og:title"
+          content="Xổ Số Miền Nam - XSMN, XSMB, XSMT">
+
+    <meta property="og:description"
+          content="Trang GitHub giới thiệu hệ thống Xổ Số Miền Nam và các công cụ tra cứu xổ số ba miền.">
+
+    <meta property="og:url"
+          content="https://xosomienamcc.github.io/">
+
+    <meta property="og:image"
+          content="https://github.com/xosomienamcc.png">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+            background: #f5f6f8;
+            color: #252525;
             line-height: 1.7;
         }
 
-        h1, h2 {
-            color: #c40000;
+        a {
+            color: #075bb5;
         }
 
-        a {
-            color: #0757c7;
+        .container {
+            width: calc(100% - 32px);
+            max-width: 1120px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .topbar {
+            background: #b80000;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            padding: 7px 12px;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .header-main {
+            min-height: 92px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .brand-name {
+            display: block;
+            font-size: 27px;
+            line-height: 1.15;
+            color: #d00000;
+            font-weight: 700;
+        }
+
+        .brand-desc {
+            display: block;
+            margin-top: 4px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: #222;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #d00000;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 55px 0;
+            background: #fff;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.35fr .65fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 39px;
+            line-height: 1.25;
+            margin: 0 0 18px;
+            color: #222;
+        }
+
+        h1 span {
+            color: #d00000;
+        }
+
+        .intro {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 22px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #d00000;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 5px;
+            margin: 6px 8px 6px 0;
+        }
+
+        .button.secondary {
+            background: #075bb5;
+        }
+
+        .button:hover {
+            opacity: .9;
+        }
+
+        .quick {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-top: 4px solid #d00000;
+            padding: 25px;
+            border-radius: 7px;
+        }
+
+        .quick h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .quick ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .quick li {
+            margin: 9px 0;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 48px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 0 0 8px;
+            font-size: 30px;
+        }
+
+        .section-desc {
+            max-width: 760px;
+            margin: 0 auto 30px;
+            text-align: center;
+            color: #666;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 7px;
+            padding: 24px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 21px;
+            color: #b80000;
+        }
+
+        .card p {
+            margin-top: 0;
+            color: #555;
+        }
+
+        .card a {
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* TOOLS */
+
+        .tools-section {
+            background: #fff;
+        }
+
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .tool {
+            display: block;
+            padding: 19px;
+            background: #f7f7f7;
+            border: 1px solid #dedede;
+            border-left: 4px solid #075bb5;
+            text-decoration: none;
+            color: #222;
+            border-radius: 5px;
+        }
+
+        .tool strong {
+            display: block;
+            color: #075bb5;
+            margin-bottom: 3px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 860px;
+            margin: auto;
+        }
+
+        .about h2 {
+            font-size: 29px;
+        }
+
+        .official {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fff5f5;
+            border-left: 4px solid #d00000;
+        }
+
+        /* TRUST */
+
+        .trust-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px 20px;
+        }
+
+        .trust-links a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .trust-links a:hover {
+            color: #d00000;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 20px;
+            padding: 35px 0;
+            background: #202020;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        .footer-main {
+            max-width: 850px;
+        }
+
+        @media (max-width: 800px) {
+
+            .header-main {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 0;
+            }
+
+            nav {
+                gap: 10px 15px;
+            }
+
+            .hero-grid,
+            .cards,
+            .tools {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding: 35px 0;
+            }
         }
     </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://xosomienamcc.github.io/#website",
+                "url": "https://xosomienamcc.github.io/",
+                "name": "Xổ Số Miền Nam - GitHub",
+                "inLanguage": "vi-VN"
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://xosomienamcc.github.io/#webpage",
+                "url": "https://xosomienamcc.github.io/",
+                "name": "Xổ Số Miền Nam | XSMN, XSMB, XSMT & Tra Cứu",
+                "isPartOf": {
+                    "@id": "https://xosomienamcc.github.io/#website"
+                },
+                "about": {
+                    "@id": "https://xosomienamcc.github.io/#organization"
+                },
+                "inLanguage": "vi-VN"
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://xosomienamcc.github.io/#organization",
+                "name": "Xổ Số Miền Nam",
+                "url": "https://xosomienam.cc/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://github.com/xosomienamcc.png"
+                },
+                "sameAs": [
+                    "https://xosomienam.cc/",
+                    "https://github.com/xosomienamcc"
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
 
-<h1>Xổ Số Miền Nam</h1>
+<div class="topbar">
+    Trang giới thiệu và điều hướng chính thức đến hệ thống Xổ Số Miền Nam
+</div>
 
-<p>
-    <a href="https://xosomienam.cc/">Xổ Số Miền Nam</a>
-    cung cấp hệ thống tra cứu kết quả xổ số theo khu vực,
-    ngày mở thưởng và các tiện ích hỗ trợ người dùng.
-</p>
+<header>
+    <div class="container header-main">
 
-<h2>Tra cứu xổ số ba miền</h2>
+        <a class="brand"
+           href="https://xosomienam.cc/"
+           aria-label="Xổ Số Miền Nam">
 
-<p>
-    Người dùng có thể truy cập trực tiếp các khu vực:
-</p>
+            <img
+                src="https://github.com/xosomienamcc.png?size=160"
+                alt="Xổ Số Miền Nam">
 
-<ul>
-    <li>
-        <a href="https://xosomienam.cc/">
-            XSMN - Xổ số miền Nam
+            <span>
+                <span class="brand-name">
+                    Xổ Số Miền Nam
+                </span>
+
+                <span class="brand-desc">
+                    Tra cứu kết quả xổ số ba miền
+                </span>
+            </span>
         </a>
-    </li>
 
-    <li>
-        <a href="https://xosomienam.cc/xsmb-xo-so-mien-bac/">
-            XSMB - Xổ số miền Bắc
-        </a>
-    </li>
+        <nav>
+            <a href="https://xosomienam.cc/">XSMN</a>
 
-    <li>
-        <a href="https://xosomienam.cc/xsmt-xo-so-mien-trung/">
-            XSMT - Xổ số miền Trung
-        </a>
-    </li>
-</ul>
+            <a href="https://xosomienam.cc/xsmb-xo-so-mien-bac/">
+                XSMB
+            </a>
 
-<h2>Website chính thức</h2>
+            <a href="https://xosomienam.cc/xsmt-xo-so-mien-trung/">
+                XSMT
+            </a>
 
-<p>
-    Truy cập:
-    <a href="https://xosomienam.cc/">
-        https://xosomienam.cc/
-    </a>
-</p>
+            <a href="https://xosomienam.cc/truc-tiep-xsmn/">
+                Trực tiếp
+            </a>
+
+            <a href="https://xosomienam.cc/tin-tuc/">
+                Tin tức
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div>
+
+            <h1>
+                <span>Xổ Số Miền Nam</span> -
+                tra cứu XSMN, XSMB và XSMT
+            </h1>
+
+            <p class="intro">
+                Trang này giới thiệu hệ thống
+                <a href="https://xosomienam.cc/">
+                    Xổ Số Miền Nam
+                </a>,
+                nơi người dùng có thể truy cập kết quả xổ số theo
+                từng khu vực, theo dõi trực tiếp và sử dụng các
+                công cụ hỗ trợ tra cứu.
+            </p>
+
+            <a class="button"
+               href="https://xosomienam.cc/">
+                Xem XSMN
+            </a>
+
+            <a class="button secondary"
+               href="https://xosomienam.cc/do-ve-so/">
+                Dò vé số
+            </a>
+
+        </div>
+
+        <aside class="quick">
+
+            <h2>Truy cập nhanh</h2>
+
+            <ul>
+                <li>
+                    <a href="https://xosomienam.cc/">
+                        XSMN - Xổ số miền Nam
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://xosomienam.cc/xsmb-xo-so-mien-bac/">
+                        XSMB - Xổ số miền Bắc
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://xosomienam.cc/xsmt-xo-so-mien-trung/">
+                        XSMT - Xổ số miền Trung
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://xosomienam.cc/truc-tiep-xsmn/">
+                        Trực tiếp XSMN
+                    </a>
+                </li>
+            </ul>
+
+        </aside>
+
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+
+        <h2 class="section-title">
+            Tra cứu xổ số ba miền
+        </h2>
+
+        <p class="section-desc">
+            Các khu vực chính được tách riêng để người dùng
+            lựa chọn đúng bảng kết quả cần theo dõi.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+
+                <h3>Xổ số miền Nam</h3>
+
+                <p>
+                    Theo dõi kết quả XSMN và chuyển nhanh
+                    đến các nội dung tra cứu dành cho khu vực miền Nam.
+                </p>
+
+                <a href="https://xosomienam.cc/">
+                    Tra cứu XSMN →
+                </a>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Xổ số miền Bắc</h3>
+
+                <p>
+                    Tra cứu bảng kết quả XSMB,
+                    các kỳ mở thưởng và thông tin xổ số miền Bắc.
+                </p>
+
+                <a href="https://xosomienam.cc/xsmb-xo-so-mien-bac/">
+                    Tra cứu XSMB →
+                </a>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Xổ số miền Trung</h3>
+
+                <p>
+                    Truy cập khu vực XSMT để xem kết quả
+                    và các nội dung liên quan tới miền Trung.
+                </p>
+
+                <a href="https://xosomienam.cc/xsmt-xo-so-mien-trung/">
+                    Tra cứu XSMT →
+                </a>
+
+            </article>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="tools-section">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Công cụ tra cứu
+        </h2>
+
+        <p class="section-desc">
+            Một số tiện ích quan trọng trên hệ thống
+            giúp người dùng xem trực tiếp, tra cứu lịch sử
+            và kiểm tra kết quả thuận tiện hơn.
+        </p>
+
+        <div class="tools">
+
+            <a class="tool"
+               href="https://xosomienam.cc/truc-tiep-xsmn/">
+
+                <strong>Trực tiếp XSMN</strong>
+
+                Theo dõi tiến trình công bố kết quả miền Nam.
+            </a>
+
+
+            <a class="tool"
+               href="https://xosomienam.cc/xsmn-30-ngay/">
+
+                <strong>XSMN 30 ngày</strong>
+
+                Tra cứu lại kết quả miền Nam trong nhiều kỳ gần nhất.
+            </a>
+
+
+            <a class="tool"
+               href="https://xosomienam.cc/do-ve-so/">
+
+                <strong>Dò vé số</strong>
+
+                Công cụ hỗ trợ đối chiếu thông tin vé và kết quả.
+            </a>
+
+
+            <a class="tool"
+               href="https://xosomienam.cc/tin-tuc/">
+
+                <strong>Tin tức xổ số</strong>
+
+                Theo dõi nội dung hướng dẫn,
+                quy định và thông tin liên quan.
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section>
+
+    <div class="container about">
+
+        <h2>Về Xổ Số Miền Nam</h2>
+
+        <p>
+            Xổ Số Miền Nam được xây dựng để tập trung
+            các nhu cầu tra cứu kết quả xổ số trên cùng một hệ thống.
+            Người dùng có thể chuyển giữa miền Nam, miền Bắc,
+            miền Trung và những công cụ hỗ trợ mà không cần
+            tìm kiếm nhiều nguồn riêng biệt.
+        </p>
+
+        <p>
+            GitHub Pages này không thay thế website chính
+            và không hiển thị bảng kết quả trực tiếp.
+            Mục đích của trang là giới thiệu thương hiệu
+            và cung cấp đường dẫn tới những chuyên mục
+            quan trọng trên xosomienam.cc.
+        </p>
+
+        <div class="official">
+
+            Website chính:
+            <strong>
+                <a href="https://xosomienam.cc/">
+                    https://xosomienam.cc/
+                </a>
+            </strong>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Thông tin website
+        </h2>
+
+        <div class="trust-links">
+
+            <a href="https://xosomienam.cc/gioi-thieu/">
+                Giới thiệu
+            </a>
+
+            <a href="https://xosomienam.cc/author/tac-gia-ngoc-anh/">
+                Biên tập viên
+            </a>
+
+            <a href="https://xosomienam.cc/tin-tuc/">
+                Tin tức
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-main">
+
+        <strong>Xổ Số Miền Nam - xosomienam.cc</strong>
+
+        <p>
+            Trang GitHub này cung cấp thông tin giới thiệu
+            và liên kết tới hệ thống tra cứu xổ số.
+            Thông tin kết quả cần được đối chiếu với
+            thông báo chính thức của đơn vị phát hành.
+        </p>
+
+        <p>
+            Website:
+            <a href="https://xosomienam.cc/">
+                xosomienam.cc
+            </a>
+        </p>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
